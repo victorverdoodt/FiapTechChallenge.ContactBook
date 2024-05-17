@@ -17,13 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Application", "FiapTechChallenge.ContactBook.Application\FiapTechChallenge.ContactBook.Application.csproj", "{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Api", "FiapTechChallenge.ContactBook.Api\FiapTechChallenge.ContactBook.Api.csproj", "{69615698-A79F-4419-9171-31363C9D8158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Presentation.Api", "FiapTechChallenge.ContactBook.Api\FiapTechChallenge.ContactBook.Presentation.Api.csproj", "{69615698-A79F-4419-9171-31363C9D8158}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.AppHost", "FiapTechChallenge.ContactBook.AppHost\FiapTechChallenge.ContactBook.AppHost.csproj", "{D579785D-A11F-4232-B7C0-6CDDC6B93884}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.ServiceDefaults", "FiapTechChallenge.ContactBook.ServiceDefaults\FiapTechChallenge.ContactBook.ServiceDefaults.csproj", "{A9505446-D3D3-4268-BD66-92E3B364F66C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Infrastructure.Data", "FiapTechChallenge.ContactBook.Infrastructure.Data\FiapTechChallenge.ContactBook.Infrastructure.Data.csproj", "{5C44C41F-418C-4C78-9F13-E83F405CD963}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Presentation.WebApp", "FiapTechChallenge.ContactBook.Presentation.WebApp\FiapTechChallenge.ContactBook.Presentation.WebApp.csproj", "{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D} = {6ECF7B30-61A5-49DF-8DCD-02D2962CED1D}
 		{69615698-A79F-4419-9171-31363C9D8158} = {315E69B2-3E6F-4EA9-91AB-9273E6133CE3}
 		{5C44C41F-418C-4C78-9F13-E83F405CD963} = {2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}
+		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F} = {315E69B2-3E6F-4EA9-91AB-9273E6133CE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF27D0B2-17F4-4AD6-A7F9-AD3A322724DB}

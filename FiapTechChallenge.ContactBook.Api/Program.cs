@@ -1,5 +1,5 @@
 
-namespace FiapTechChallenge.ContactBook.Api;
+namespace FiapTechChallenge.ContactBook.Presentation.Api;
 
 public class Program
 {
