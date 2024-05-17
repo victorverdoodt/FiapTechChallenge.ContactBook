@@ -9,11 +9,66 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Application", "02 - Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Domain", "03 - Domain", "{6F3323C8-6CE1-4A99-A71D-4FBECECE8704}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infrascructure", "04 - Infrascructure", "{2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infrastructure", "04 - Infrastructure", "{2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Domain", "FiapTechChallenge.ContactBook.Domain\FiapTechChallenge.ContactBook.Domain.csproj", "{439B16E4-ED91-4B64-A8CF-B9B227DA447D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Domain.Core", "FiapTechChallenge.ContactBook.Domain.Core\FiapTechChallenge.ContactBook.Domain.Core.csproj", "{4E8C4C76-9874-4F97-941E-0CB3B81DD90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Application", "FiapTechChallenge.ContactBook.Application\FiapTechChallenge.ContactBook.Application.csproj", "{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Api", "FiapTechChallenge.ContactBook.Api\FiapTechChallenge.ContactBook.Api.csproj", "{69615698-A79F-4419-9171-31363C9D8158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.AppHost", "FiapTechChallenge.ContactBook.AppHost\FiapTechChallenge.ContactBook.AppHost.csproj", "{D579785D-A11F-4232-B7C0-6CDDC6B93884}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.ServiceDefaults", "FiapTechChallenge.ContactBook.ServiceDefaults\FiapTechChallenge.ContactBook.ServiceDefaults.csproj", "{A9505446-D3D3-4268-BD66-92E3B364F66C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Infrastructure.Data", "FiapTechChallenge.ContactBook.Infrastructure.Data\FiapTechChallenge.ContactBook.Infrastructure.Data.csproj", "{5C44C41F-418C-4C78-9F13-E83F405CD963}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{439B16E4-ED91-4B64-A8CF-B9B227DA447D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439B16E4-ED91-4B64-A8CF-B9B227DA447D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439B16E4-ED91-4B64-A8CF-B9B227DA447D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439B16E4-ED91-4B64-A8CF-B9B227DA447D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8C4C76-9874-4F97-941E-0CB3B81DD90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8C4C76-9874-4F97-941E-0CB3B81DD90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8C4C76-9874-4F97-941E-0CB3B81DD90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8C4C76-9874-4F97-941E-0CB3B81DD90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69615698-A79F-4419-9171-31363C9D8158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69615698-A79F-4419-9171-31363C9D8158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69615698-A79F-4419-9171-31363C9D8158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69615698-A79F-4419-9171-31363C9D8158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D579785D-A11F-4232-B7C0-6CDDC6B93884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D579785D-A11F-4232-B7C0-6CDDC6B93884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D579785D-A11F-4232-B7C0-6CDDC6B93884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D579785D-A11F-4232-B7C0-6CDDC6B93884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9505446-D3D3-4268-BD66-92E3B364F66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9505446-D3D3-4268-BD66-92E3B364F66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9505446-D3D3-4268-BD66-92E3B364F66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9505446-D3D3-4268-BD66-92E3B364F66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C44C41F-418C-4C78-9F13-E83F405CD963}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{439B16E4-ED91-4B64-A8CF-B9B227DA447D} = {6F3323C8-6CE1-4A99-A71D-4FBECECE8704}
+		{4E8C4C76-9874-4F97-941E-0CB3B81DD90A} = {6F3323C8-6CE1-4A99-A71D-4FBECECE8704}
+		{71C9CE62-34A2-4CFB-B719-70A7ECD0005D} = {6ECF7B30-61A5-49DF-8DCD-02D2962CED1D}
+		{69615698-A79F-4419-9171-31363C9D8158} = {315E69B2-3E6F-4EA9-91AB-9273E6133CE3}
+		{5C44C41F-418C-4C78-9F13-E83F405CD963} = {2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF27D0B2-17F4-4AD6-A7F9-AD3A322724DB}
