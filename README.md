@@ -39,6 +39,6 @@ Este documento fornece um guia abrangente para a aplicação de gerenciamento de
 ### Framework
 - **NUnit**: Usado para conduzir testes unitários para garantir a confiabilidade e correção do código.
 
-## Containerização e Gerenciamento
-### Docker
-- **Uso**: A aplicação é containerizada usando Docker, o que simplifica a implantação e a escalabilidade.
+## Containerização e Orquestração
+### .NET Aspire
+- **Uso**: A aplicação é containerizada usando Docker, o que simplifica a implantação e a escalabilidade com .NET Aspire.
