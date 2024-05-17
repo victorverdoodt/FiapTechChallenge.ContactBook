@@ -3,8 +3,8 @@ using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
 
 namespace FiapTechChallenge.ContactBook.Application.Interfaces
 {
-    public interface IContactService : IAsyncService<Contact>
+    public interface IDDDService : IAsyncService<DDD>
     {
-
+        Task<DDD> GetDDDByCodeAsync(string code);
     }
 }

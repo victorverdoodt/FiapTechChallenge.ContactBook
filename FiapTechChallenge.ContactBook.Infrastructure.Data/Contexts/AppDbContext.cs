@@ -8,12 +8,12 @@ namespace FiapTechChallenge.ContactBook.Infrastructure.Data.Contexts
     {
         public AppDbContext()
         {
-               
+
         }
 
         public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : base(dbContextOptions)
         {
-                
+
         }
 
         public virtual DbSet<Contact> Contacts { get; set; }

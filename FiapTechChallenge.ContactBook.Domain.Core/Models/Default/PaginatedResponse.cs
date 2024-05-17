@@ -1,5 +1,4 @@
 ﻿using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
-using System;
 using System.Text.Json.Serialization;
 
 namespace FiapTechChallenge.ContactBook.Domain.Core.Models.Default

@@ -8,7 +8,7 @@ namespace FiapTechChallenge.ContactBook.Domain.Core.Entities
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int DDDId { get; set; }
+        public int? DDDId { get; set; }
 
         public virtual DDD DDDNavigation { get; set; }
 
