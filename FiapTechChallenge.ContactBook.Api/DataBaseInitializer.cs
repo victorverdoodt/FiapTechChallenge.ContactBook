@@ -20,8 +20,8 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
 
         private async Task InitializeDatabaseAsync(IAppDbContext dbContext, CancellationToken cancellationToken)
         {
-            
 
+            await Task.Delay(5000);
             using var activity = _activitySource.StartActivity("Migrating database", ActivityKind.Client);
 
             var sw = Stopwatch.StartNew();

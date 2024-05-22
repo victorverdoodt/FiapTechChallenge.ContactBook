@@ -2,7 +2,9 @@
 using FiapTechChallenge.ContactBook.Application.Interfaces;
 using FiapTechChallenge.ContactBook.Application.Specification;
 using FiapTechChallenge.ContactBook.Domain.Core.Entities;
+using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
 {
@@ -19,23 +21,26 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetContacts([FromQuery] FindContactsByRegionDTO dto) 
         {
-            var entitites = await _contactService.FindAsync(new FindContactsByRegion(dto, dto.RegionId));
+            IRequestResponse<IQueryable<ResponseContactDto>> entities;
+            entities = await _contactService.FindAsync<ResponseContactDto>(new FindContactsByRegion(dto, dto.RegionId));
 
-            if(entitites.Data is null)
+            if(entities.Data is null)
                 return NoContent();
 
-            return Ok(entitites);
+            var resolveEntities = await entities.Data.ToListAsync();
+            entities.Data = resolveEntities.AsQueryable();
+            return Ok(entities);
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostContact([FromBody] Contact contact)
+        public async Task<IActionResult> PostContact([FromBody] CreateContactDto contact)
         {
             await _contactService.AddAsync(contact);
             return Created();
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateContact([FromBody] Contact contact)
+        public async Task<IActionResult> UpdateContact([FromBody] UpdateContactDto contact)
         {
             await _contactService.UpdateAsync(contact);
             return NoContent();

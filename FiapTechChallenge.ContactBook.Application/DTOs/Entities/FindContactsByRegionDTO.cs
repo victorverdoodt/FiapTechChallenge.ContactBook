@@ -4,6 +4,6 @@ namespace FiapTechChallenge.ContactBook.Application.DTOs.Entities
 {
     public class FindContactsByRegionDTO : PaginationDto
     {
-        public int RegionId { get; set; }
+        public int? RegionId { get; set; } = null;
     }
 }

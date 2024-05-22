@@ -1,4 +1,6 @@
-﻿namespace FiapTechChallenge.ContactBook.Presentation.Api.Extensions.Startup
+﻿using System.Text.Json.Serialization;
+
+namespace FiapTechChallenge.ContactBook.Presentation.Api.Extensions.Startup
 {
     public static class DefaultExtension
     {
@@ -8,7 +10,11 @@
             services.AddExceptionHandler<GlobalExceptionHandler>();
             services.AddProblemDetails();
             services.AddHttpClient();
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(o =>
+                {
+                    o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                });
         }
 
         public static void UseDefaultSetup(this IApplicationBuilder app)
