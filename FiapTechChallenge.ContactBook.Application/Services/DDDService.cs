@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using FiapTechChallenge.ContactBook.Application.Interfaces;
 using FiapTechChallenge.ContactBook.Domain.Core.Entities;
-using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
+using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Repositories;
 using FiapTechChallenge.ContactBook.Domain.Services;
 
 namespace FiapTechChallenge.ContactBook.Application.Services
 {
     public class DDDService : AsyncService<DDD>, IDDDService
     {
-        private readonly IAsyncRepository<DDD> _repository;
-        public DDDService(IAsyncRepository<DDD> repository, IMapper mapper) : base(repository, mapper)
+        private readonly IDDDRepository _repository;
+        public DDDService(IDDDRepository repository, IMapper mapper) : base(repository, mapper)
         {
             _repository = repository;
         }

@@ -2,6 +2,6 @@
 {
     public class BaseEntity
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
     }
 }

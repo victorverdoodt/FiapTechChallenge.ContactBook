@@ -2,6 +2,7 @@
 using FiapTechChallenge.ContactBook.Application.Interfaces;
 using FiapTechChallenge.ContactBook.Domain.Core.Entities;
 using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
+using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Repositories;
 using FiapTechChallenge.ContactBook.Domain.Services;
 using FluentValidation;
 
@@ -12,7 +13,7 @@ namespace FiapTechChallenge.ContactBook.Application.Services
     {
         private readonly IValidator<Contact> _validator;
         private readonly IDDDService _dddService;
-        public ContactService(IAsyncRepository<Contact> repository, IMapper mapper, IValidator<Contact> validator, IDDDService dddService) : base(repository, mapper)
+        public ContactService(IContactRepository repository, IMapper mapper, IValidator<Contact> validator, IDDDService dddService) : base(repository, mapper)
         {
             _validator = validator;
             _dddService = dddService;

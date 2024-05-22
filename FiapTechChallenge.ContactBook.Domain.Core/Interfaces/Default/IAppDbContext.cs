@@ -8,5 +8,6 @@ namespace FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default
         DbSet<T> Set<T>() where T : class;
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
         EntityEntry<T> Entry<T>(T entity) where T : class;
+        Task Initialize(CancellationToken cancellationToken);
     }
 }

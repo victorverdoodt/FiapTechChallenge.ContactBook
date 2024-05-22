@@ -1,14 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FiapTechChallenge.ContactBook.Application\FiapTechChallenge.ContactBook.Application.csproj" />
     <ProjectReference Include="..\FiapTechChallenge.ContactBook.Domain.Core\FiapTechChallenge.ContactBook.Domain.Core.csproj" />
     <ProjectReference Include="..\FiapTechChallenge.ContactBook.Domain\FiapTechChallenge.ContactBook.Domain.csproj" />
+    <ProjectReference Include="..\FiapTechChallenge.ContactBook.Infrastructure.Data\FiapTechChallenge.ContactBook.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

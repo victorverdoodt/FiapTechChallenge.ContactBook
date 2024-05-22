@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace FiapTechChallenge.ContactBook.Domain.Repositories
 {
-    public abstract class AsyncRepository<TEntity> : IAsyncRepository<TEntity> where TEntity : class
+    public class AsyncRepository<TEntity> : IAsyncRepository<TEntity> where TEntity : class
     {
 
         protected IAppDbContext _context;

@@ -1,4 +1,5 @@
 ﻿using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
 namespace FiapTechChallenge.ContactBook.Domain.Core.Entities
@@ -8,7 +9,7 @@ namespace FiapTechChallenge.ContactBook.Domain.Core.Entities
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int? DDDId { get; set; }
+        public Int64? DDDId { get; set; }
 
         public virtual DDD DDDNavigation { get; set; }
 

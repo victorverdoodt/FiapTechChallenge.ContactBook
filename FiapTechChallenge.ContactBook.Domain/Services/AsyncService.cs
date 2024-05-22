@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 
 namespace FiapTechChallenge.ContactBook.Domain.Services
 {
-    public abstract class AsyncService<TEntity> : IAsyncService<TEntity> where TEntity : BaseEntity
+    public class AsyncService<TEntity> : IAsyncService<TEntity> where TEntity : BaseEntity
     {
         private readonly IAsyncRepository<TEntity> _repository;
         private readonly IMapper _mapper;
