@@ -1,6 +1,5 @@
 ﻿using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
 using FiapTechChallenge.ContactBook.Infrastructure.Data.Contexts;
-using Microsoft.EntityFrameworkCore;
 
 namespace FiapTechChallenge.ContactBook.Presentation.Api.Extensions.Startup
 {

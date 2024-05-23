@@ -1,5 +1,5 @@
 using FiapTechChallenge.ContactBook.Presentation.WebApp.Components;
-
+using MudBlazor.Services;
 namespace FiapTechChallenge.ContactBook.Presentation.WebApp;
 
 public class Program
@@ -8,10 +8,12 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         builder.AddServiceDefaults();
-
+       
         // Add services to the container.
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
+
+        builder.Services.AddMudServices();
 
         var app = builder.Build();
 

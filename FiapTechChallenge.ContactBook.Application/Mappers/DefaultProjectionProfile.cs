@@ -14,7 +14,7 @@ namespace FiapTechChallenge.ContactBook.Application.Mappers
                 .ReverseMap();
 
             CreateProjection<Contact, ResponseContactDto>()
-                .ForMember(x=> x.RegionName, opt => 
+                .ForMember(x => x.RegionName, opt =>
                     opt.MapFrom(a => a.DDDNavigation.RegionNavigation.Name)
                 );
 

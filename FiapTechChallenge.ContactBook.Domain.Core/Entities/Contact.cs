@@ -1,5 +1,4 @@
 ﻿using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.RegularExpressions;
 
 namespace FiapTechChallenge.ContactBook.Domain.Core.Entities

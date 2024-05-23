@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
 using FiapTechChallenge.ContactBook.Application.Interfaces;
 using FiapTechChallenge.ContactBook.Domain.Core.Entities;
 using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Repositories;

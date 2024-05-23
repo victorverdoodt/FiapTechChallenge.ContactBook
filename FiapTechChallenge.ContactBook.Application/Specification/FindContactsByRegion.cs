@@ -7,7 +7,7 @@ namespace FiapTechChallenge.ContactBook.Application.Specification
     {
         public FindContactsByRegion(PaginationDto dto, int? regionId) : base(dto, x => (regionId != null ? x.DDDNavigation.RegionNavigation.Id == regionId : x.DDDId != null))
         {
-            AddInclude(x=> x.DDDNavigation);
+            AddInclude(x => x.DDDNavigation);
             AddInclude(x => x.DDDNavigation.RegionNavigation);
         }
     }
