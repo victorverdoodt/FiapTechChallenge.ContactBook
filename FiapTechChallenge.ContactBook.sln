@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Infrastructure.IOC", "FiapTechChallenge.ContactBook.Infrastructure.IOC\FiapTechChallenge.ContactBook.Infrastructure.IOC.csproj", "{5EE50B05-B9DB-4128-8018-48FB34DCA43B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Tests", "05 - Tests", "{C4F22764-3AA3-41BE-8532-B4EC5E2B7E75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

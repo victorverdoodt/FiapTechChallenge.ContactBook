@@ -1,6 +1,5 @@
 ﻿using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
 using FiapTechChallenge.ContactBook.Application.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
@@ -18,8 +17,8 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRegionsAsync()
         {
-           var result = await _regionService.FindAsync<ResponseRegionDto>();
-           return Ok(result);
+            var result = await _regionService.FindAsync<ResponseRegionDto>();
+            return Ok(result);
         }
     }
 }

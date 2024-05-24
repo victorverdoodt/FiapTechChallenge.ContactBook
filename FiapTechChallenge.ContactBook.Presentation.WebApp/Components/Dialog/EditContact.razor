@@ -42,8 +42,15 @@
 
     private async Task UpdateContactAsync()
     {
-        await ContactsClient.UpdateContactAsync(contact);
-        Snackbar.Add("Contact Updated!", Severity.Success);
-        MudDialog.Close(DialogResult.Ok(contact.Name));
+        try
+        {
+            await ContactsClient.UpdateContactAsync(contact);
+            Snackbar.Add("Contact Updated!", Severity.Success);
+            MudDialog.Close(DialogResult.Ok(contact.Name));
+        }
+        catch
+        {
+            Snackbar.Add("Edit contact problem!", Severity.Error);
+        }
     }
 }

@@ -42,8 +42,15 @@
 
     private async Task CreateNewContact()
     {
-        await ContactsClient.PostContactAsync(contact);
-        Snackbar.Add("Contact Created!", Severity.Success);
-        MudDialog.Close(DialogResult.Ok(contact.Name));
+        try
+        {
+            await ContactsClient.PostContactAsync(contact);
+            Snackbar.Add("Contact Created!", Severity.Success);
+            MudDialog.Close(DialogResult.Ok(contact.Name));
+        }
+        catch
+        {
+            Snackbar.Add("Create contact problem!", Severity.Error);
+        }
     }
 }

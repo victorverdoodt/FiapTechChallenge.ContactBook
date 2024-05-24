@@ -16,7 +16,7 @@ namespace FiapTechChallenge.ContactBook.Domain.Specifications
             }
             else
             {
-                query = query.Select(x=> x);
+                query = query.Select(x => x);
             }
 
             if (specification != null)

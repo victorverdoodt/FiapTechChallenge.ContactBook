@@ -41,8 +41,15 @@
 
     private async Task DeleteContactAsync()
     {
-        await ContactsClient.DeleteContactAsync(contact.Id);
-        Snackbar.Add("Contact Deleted!", Severity.Success);
-        MudDialog.Close(DialogResult.Ok(contact.Name));
+        try
+        {
+            await ContactsClient.DeleteContactAsync(contact.Id);
+            Snackbar.Add("Contact Deleted!", Severity.Success);
+            MudDialog.Close(DialogResult.Ok(contact.Name));
+        }
+        catch
+        {
+            Snackbar.Add("Delete contact problem!", Severity.Error);
+        }
     }
 }
