@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Components\Layout\CreateContact.razor" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FiapTechChallenge.ContactBook.Application\FiapTechChallenge.ContactBook.Application.csproj" />
@@ -17,6 +21,30 @@
 
   <ItemGroup>
     <PackageReference Include="MudBlazor" Version="6.19.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Layout\CreateContact.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Dialog\DeleteContact.razor" />
+    <_ContentIncludedByDefault Remove="Components\Dialog\EditContact.razor" />
+    <_ContentIncludedByDefault Remove="Components\Layout\CreateContact.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Components\Dialog\CreateContact.razor" />
+    <None Include="Components\Dialog\DeleteContact.razor" />
+    <None Include="Components\Dialog\EditContact.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Dialog\EditContact.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Dialog\DeleteContact.razor" />
   </ItemGroup>
 
 </Project>

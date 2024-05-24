@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
+using FiapTechChallenge.ContactBook.Application.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
@@ -7,15 +9,17 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
     [ApiController]
     public class RegionsController : ControllerBase
     {
-        public RegionsController()
+        private readonly IRegionService _regionService;
+        public RegionsController(IRegionService regionService)
         {
-                
+            _regionService = regionService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetRegionsAsync()
         {
-            throw new NotImplementedException();
+           var result = await _regionService.FindAsync<ResponseRegionDto>();
+           return Ok(result);
         }
     }
 }

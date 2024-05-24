@@ -1,20 +1,32 @@
 ﻿@page "/contacts"
+@rendermode InteractiveServer
 @using FiapTechChallenge.ContactBook.Application.DTOs.Entities
+@using FiapTechChallenge.ContactBook.Domain.Core.Models.Default
+@using FiapTechChallenge.ContactBook.Presentation.WebApp.Components.Dialog
 @using FiapTechChallenge.ContactBook.Presentation.WebApp.Services
+
 @inject ContactsHttpClient ContactsClient
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
 
 <MudPaper Class="pa-4">
     <MudText Typo="Typo.h6">Contact List</MudText>
 
     <MudGrid>
         <MudItem xs="12" sm="6">
-            <MudSelect T="int?" Label="Select Region" @bind-Value="selectedRegionId" Dense="true" OnChange="async e => await LoadContactsAsync()">
+            <MudSelect T="int?" Label="Select Region" Dense="true" ValueChanged="OnRegionChangeAsync">
                 <MudSelectItem T="int?" Value="null">All Regions</MudSelectItem>
-                @foreach (var region in regions)
+                @if (regions != null)
                 {
-                    <MudSelectItem T="int?" Value="region.Id">@region.Name</MudSelectItem>
+                    @foreach (var region in regions.Data)
+                    {
+                        <MudSelectItem T="int?" Value="region.Id" @key="region.Id">@region.Name</MudSelectItem>
+                    }
                 }
             </MudSelect>
+        </MudItem>
+        <MudItem xs="12" sm="6" Class="d-flex justify-end">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="AddContactAsync">Add New Contact</MudButton>
         </MudItem>
     </MudGrid>
 
@@ -23,23 +35,31 @@
             <MudTh>Name</MudTh>
             <MudTh>Email</MudTh>
             <MudTh>Phone</MudTh>
-            <!-- Adicione mais cabeçalhos conforme necessário -->
+            <MudTh>Region</MudTh>
+            <MudTh>Actions</MudTh>
         </HeaderContent>
         <RowTemplate>
             <MudTd DataLabel="Name">@context.Name</MudTd>
             <MudTd DataLabel="Email">@context.Email</MudTd>
             <MudTd DataLabel="Phone">@context.Phone</MudTd>
-            <!-- Adicione mais células conforme necessário -->
+            <MudTd DataLabel="Region">@context.RegionName</MudTd>
+            <MudTd DataLabel="Actions">
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@((e)=> EditContactAsync(context))" />
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Secondary" OnClick="@((e)=> DeleteContactAsync(context))" />
+            </MudTd>
         </RowTemplate>
     </MudTable>
 
-    <MudPagination @bind-Page="@currentPage" PageSize="pageSize" Total="totalItems" OnPageChanged="async e => await LoadContactsAsync()" />
-
+    <MudGrid Class="mt-4">
+        <MudItem xs="12" class="d-flex justify-center">
+            <MudPagination @bind-Page="@currentPage" PageSize="pageSize" Total="totalItems" OnPageChanged="async e => await LoadContactsAsync()" />
+        </MudItem>
+    </MudGrid>
 </MudPaper>
 
 @code {
     private IEnumerable<ResponseContactDto> contacts;
-    private IEnumerable<ResponseRegionDto> regions; // Suponha que você tenha um DTO para regiões
+    private Response<IEnumerable<ResponseRegionDto>> regions;
     private int? selectedRegionId;
     private int currentPage = 1;
     private int pageSize = 10;
@@ -53,21 +73,65 @@
 
     private async Task LoadRegionsAsync()
     {
-        // Substitua por sua chamada para obter a lista de regiões
-        regions = await ContactsClient.GetRegionsAsync(); 
+        regions = await ContactsClient.GetRegionsAsync();
+        StateHasChanged();
     }
 
     private async Task LoadContactsAsync()
     {
         var dto = new FindContactsByRegionDTO
-        {
-            RegionId = selectedRegionId,
-            Take = pageSize,
-            Page = currentPage
-        };
+            {
+                RegionId = selectedRegionId,
+                Take = pageSize,
+                Page = currentPage
+            };
 
         var response = await ContactsClient.GetContactsAsync(dto);
         contacts = response.Data?.ToList();
         totalItems = response.Total;
+        StateHasChanged();
+    }
+
+    private async Task OnRegionChangeAsync(int? newRegionId)
+    {
+        selectedRegionId = newRegionId;
+        currentPage = 1;
+        await LoadContactsAsync();
+    }
+
+    private async Task AddContactAsync()
+    {
+        var dialog = await DialogService.ShowAsync<CreateContact>("Create Contact");
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            await LoadContactsAsync();
+        }
+    }
+
+    private async Task EditContactAsync(ResponseContactDto contact)
+    {
+        var update = new UpdateContactDto { Id = contact.Id, Email = contact.Email, Name = contact.Name, Phone = contact.Phone };
+        var parameters = new DialogParameters<EditContact> { { x => x.contact, update } };
+        var dialog = await DialogService.ShowAsync<EditContact>("Edit Contact", parameters);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            await LoadContactsAsync();
+        }
+    }
+
+    private async Task DeleteContactAsync(ResponseContactDto contact)
+    {
+        var parameters = new DialogParameters<DeleteContact> { { x => x.contact, contact } };
+        var dialog = await DialogService.ShowAsync<DeleteContact>("Delete Contact", parameters);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            await LoadContactsAsync();
+        }
     }
 }

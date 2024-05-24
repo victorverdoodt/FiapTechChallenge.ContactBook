@@ -1,4 +1,5 @@
 using FiapTechChallenge.ContactBook.Presentation.WebApp.Components;
+using FiapTechChallenge.ContactBook.Presentation.WebApp.Services;
 using MudBlazor.Services;
 namespace FiapTechChallenge.ContactBook.Presentation.WebApp;
 
@@ -14,6 +15,11 @@ public class Program
             .AddInteractiveServerComponents();
 
         builder.Services.AddMudServices();
+
+        builder.Services.AddHttpClient<ContactsHttpClient>(client =>
+        {
+            client.BaseAddress = new Uri("https://api");
+        });
 
         var app = builder.Build();
 

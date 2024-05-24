@@ -25,10 +25,12 @@ namespace FiapTechChallenge.ContactBook.Infrastructure.IOC
             //Repositories
             services.AddScoped<IDDDRepository, DDDRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IRegionRepository, RegionRepository>();
 
             //Services
             services.AddScoped<IDDDService, DDDService>();
             services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IRegionService, RegionService>();
         }
     }
 }

@@ -18,6 +18,8 @@ namespace FiapTechChallenge.ContactBook.Application.Mappers
                     opt.MapFrom(a => a.DDDNavigation.RegionNavigation.Name)
                 );
 
+            CreateProjection<Region, ResponseRegionDto>();
+
         }
     }
 }

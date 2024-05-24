@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Presentation.WebApp", "FiapTechChallenge.ContactBook.Presentation.WebApp\FiapTechChallenge.ContactBook.Presentation.WebApp.csproj", "{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Infrastructure.IOC", "FiapTechChallenge.ContactBook.Infrastructure.IOC\FiapTechChallenge.ContactBook.Infrastructure.IOC.csproj", "{5EE50B05-B9DB-4128-8018-48FB34DCA43B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Infrastructure.IOC", "FiapTechChallenge.ContactBook.Infrastructure.IOC\FiapTechChallenge.ContactBook.Infrastructure.IOC.csproj", "{5EE50B05-B9DB-4128-8018-48FB34DCA43B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

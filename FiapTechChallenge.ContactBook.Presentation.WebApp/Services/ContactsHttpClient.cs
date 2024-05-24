@@ -1,5 +1,4 @@
 ﻿using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
-using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
 using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
 using FiapTechChallenge.ContactBook.Presentation.WebApp.Helpers;
 
@@ -42,12 +41,12 @@ namespace FiapTechChallenge.ContactBook.Presentation.WebApp.Services
             response.EnsureSuccessStatusCode();
         }
 
-        public async Task<IEnumerable<ResponseRegionDto>> GetRegionsAsync()
+        public async Task<Response<IEnumerable<ResponseRegionDto>>> GetRegionsAsync()
         {
-            var response = await _httpClient.GetAsync("api/regions"); // Supondo que sua API tem um endpoint para regiões
+            var response = await _httpClient.GetAsync("api/regions");
             response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadFromJsonAsync<IEnumerable<ResponseRegionDto>>();
+            return await response.Content.ReadFromJsonAsync<Response<IEnumerable<ResponseRegionDto>>>();
         }
     }
 }

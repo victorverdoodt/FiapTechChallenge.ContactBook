@@ -1,0 +1,42 @@
+﻿@using FiapTechChallenge.ContactBook.Application.DTOs.Entities
+@using FiapTechChallenge.ContactBook.Presentation.WebApp.Services
+@inject ContactsHttpClient ContactsClient
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3 mb-n1" />
+            Edit contact?
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudTextField @bind-Value="@contact.Name" Label="Name" />
+        <MudTextField @bind-Value="@contact.Email" Label="Email" />
+        <MudTextField @bind-Value="@contact.Phone" Label="Phone" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@UpdateContact">Save</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public UpdateContactDto contact { get; set; } = new UpdateContactDto();
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task UpdateContact()
+    {
+        await ContactsClient.UpdateContactAsync(contact);
+        Snackbar.Add("Contact Updated!", Severity.Success);
+        MudDialog.Close(DialogResult.Ok(contact.Name));
+    }
+}
