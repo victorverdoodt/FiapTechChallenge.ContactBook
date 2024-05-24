@@ -11,14 +11,21 @@
         </MudText>
     </TitleContent>
     <DialogContent>
-        <MudTextField @bind-Value="@contact.Name" Label="Name" />
-        <MudTextField @bind-Value="@contact.Email" Label="Email" />
-        <MudTextField @bind-Value="@contact.Phone" Label="Phone" />
+        <EditForm Model="@contact" OnValidSubmit="UpdateContactAsync">
+            <DataAnnotationsValidator />
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField @bind-Value="@contact.Name" Label="Name" For="@(() => contact.Name)" />
+                    <MudTextField @bind-Value="@contact.Email" Label="Email" For="@(() => contact.Email)" />
+                    <MudTextField @bind-Value="@contact.Phone" Label="Phone" For="@(() => contact.Phone)" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
     </DialogContent>
-    <DialogActions>
-        <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@UpdateContact">Save</MudButton>
-    </DialogActions>
 </MudDialog>
 
 @code {
@@ -33,7 +40,7 @@
         MudDialog.Cancel();
     }
 
-    private async Task UpdateContact()
+    private async Task UpdateContactAsync()
     {
         await ContactsClient.UpdateContactAsync(contact);
         Snackbar.Add("Contact Updated!", Severity.Success);

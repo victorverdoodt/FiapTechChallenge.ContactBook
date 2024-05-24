@@ -6,19 +6,27 @@
 <MudDialog>
     <TitleContent>
         <MudText Typo="Typo.h6">
-            <MudIcon Icon="@Icons.Material.Filled.Create" Class="mr-3 mb-n1" />
+            <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-3 mb-n1" />
             Create contact?
         </MudText>
     </TitleContent>
+
     <DialogContent>
-        <MudTextField @bind-Value="@contact.Name" Label="Name" />
-        <MudTextField @bind-Value="@contact.Email" Label="Email" />
-        <MudTextField @bind-Value="@contact.Phone" Label="Phone" />
-    </DialogContent>
-    <DialogActions>
-        <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@CreateNewContact">Add</MudButton>
-    </DialogActions>
+        <EditForm Model="@contact" OnValidSubmit="CreateNewContact">
+            <DataAnnotationsValidator/>
+            <MudCard>
+                <MudCardContent>
+                            <MudTextField @bind-Value="@contact.Name" Label="Name" For="@(() => contact.Name)" />
+                            <MudTextField @bind-Value="@contact.Email" Label="Email" For="@(() => contact.Email)"  />
+                            <MudTextField @bind-Value="@contact.Phone" Label="Phone" For="@(() => contact.Phone)" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Create</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>   
 </MudDialog>
 
 @code {

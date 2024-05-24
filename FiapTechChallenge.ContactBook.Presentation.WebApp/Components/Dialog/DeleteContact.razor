@@ -6,19 +6,25 @@
 <MudDialog>
     <TitleContent>
         <MudText Typo="Typo.h6">
-            <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-3 mb-n1" />
-            delete contact?
+            <MudIcon Icon="@Icons.Material.Filled.Delete" Class="mr-3 mb-n1" />
+            Delete contact?
         </MudText>
     </TitleContent>
     <DialogContent>
-        <MudTextField @bind-Value="@contact.Name" Label="Name" ReadOnly="true" />
-        <MudTextField @bind-Value="@contact.Email" Label="Email" ReadOnly="true" />
-        <MudTextField @bind-Value="@contact.Phone" Label="Phone" ReadOnly="true" />
+        <EditForm Model="@contact" OnValidSubmit="DeleteContactAsync">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField @bind-Value="@contact.Name" Label="Name" ReadOnly="true" />
+                    <MudTextField @bind-Value="@contact.Email" Label="Email" ReadOnly="true" />
+                    <MudTextField @bind-Value="@contact.Phone" Label="Phone" ReadOnly="true" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Delete</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
     </DialogContent>
-    <DialogActions>
-        <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@DeleteContactAsync">Delete</MudButton>
-    </DialogActions>
 </MudDialog>
 
 @code {
