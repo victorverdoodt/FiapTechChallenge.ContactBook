@@ -14,6 +14,9 @@ namespace FiapTechChallenge.ContactBook.Domain.Core.Entities
 
         public bool IsValidPhoneNumber()
         {
+            if(string.IsNullOrEmpty(Phone))
+                return false;
+
             var regex = new Regex(@"^\d{10,11}$");
             var normalizedPhone = NormalizePhoneNumber();
             return regex.IsMatch(normalizedPhone);

@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Tests", "05 - Tests", "{C4F22764-3AA3-41BE-8532-B4EC5E2B7E75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Tests", "FiapTechChallenge.ContactBook.Tests\FiapTechChallenge.ContactBook.Tests.csproj", "{05CD608E-0D51-4692-B524-76EAB39EEC36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{5EE50B05-B9DB-4128-8018-48FB34DCA43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE50B05-B9DB-4128-8018-48FB34DCA43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EE50B05-B9DB-4128-8018-48FB34DCA43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05CD608E-0D51-4692-B524-76EAB39EEC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05CD608E-0D51-4692-B524-76EAB39EEC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05CD608E-0D51-4692-B524-76EAB39EEC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05CD608E-0D51-4692-B524-76EAB39EEC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{5C44C41F-418C-4C78-9F13-E83F405CD963} = {2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}
 		{00D192FC-7438-4C5F-86C0-DBC0EFD4BB0F} = {315E69B2-3E6F-4EA9-91AB-9273E6133CE3}
 		{5EE50B05-B9DB-4128-8018-48FB34DCA43B} = {2A1D9427-AF39-4FBB-A4D8-D2227DBBA7EC}
+		{05CD608E-0D51-4692-B524-76EAB39EEC36} = {C4F22764-3AA3-41BE-8532-B4EC5E2B7E75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF27D0B2-17F4-4AD6-A7F9-AD3A322724DB}
