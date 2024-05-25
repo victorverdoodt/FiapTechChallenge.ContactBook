@@ -9,7 +9,7 @@ namespace FiapTechChallenge.ContactBook.Application.Mappers
         public DefaultProjectionProfile()
         {
             CreateMap<Contact, CreateContactDto>()
-            .ReverseMap();
+                .ReverseMap();
             CreateMap<Contact, UpdateContactDto>()
                 .ReverseMap();
 
@@ -19,7 +19,7 @@ namespace FiapTechChallenge.ContactBook.Application.Mappers
                 );
 
             CreateProjection<Region, ResponseRegionDto>();
-
+            CreateProjection<DDD, ResponseDDDDto>();
         }
     }
 }

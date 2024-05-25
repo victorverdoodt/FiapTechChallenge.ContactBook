@@ -48,5 +48,13 @@ namespace FiapTechChallenge.ContactBook.Presentation.WebApp.Services
 
             return await response.Content.ReadFromJsonAsync<Response<IEnumerable<ResponseRegionDto>>>();
         }
+
+        public async Task<Response<IEnumerable<ResponseDDDDto>>> GetDDDsAsync()
+        {
+            var response = await _httpClient.GetAsync("api/ddds");
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<Response<IEnumerable<ResponseDDDDto>>>();
+        }
     }
 }

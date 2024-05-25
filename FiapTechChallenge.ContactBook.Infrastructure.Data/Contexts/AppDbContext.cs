@@ -127,6 +127,39 @@ namespace FiapTechChallenge.ContactBook.Infrastructure.Data.Contexts
                 new DDD { Id = 66, Code = "19", RegionId = 26 },
                 new DDD { Id = 67, Code = "63", RegionId = 27 }
             );
+
+            modelBuilder.Entity<Contact>().HasData(
+                new Contact { Id = 1, Name = "Lucas Silva", Email = "lucas.silva@example.com", Phone = "66912345678", DDDId = 13 },
+                new Contact { Id = 2, Name = "Mateus Santos", Email = "mateus.santos@example.com", Phone = "81956781234", DDDId = 16 },
+                new Contact { Id = 3, Name = "Gabriel Oliveira", Email = "gabriel.oliveira@example.com", Phone = "95934567890", DDDId = 22 },
+                new Contact { Id = 4, Name = "Ana Souza", Email = "ana.souza@example.com", Phone = "99345678901", DDDId = 10 },
+                new Contact { Id = 5, Name = "Julia Rodrigues", Email = "julia.rodrigues@example.com", Phone = "93345678901", DDDId = 14 },
+                new Contact { Id = 6, Name = "Mariana Almeida", Email = "mariana.almeida@example.com", Phone = "71345678901", DDDId = 5 },
+                new Contact { Id = 7, Name = "Rafael Costa", Email = "rafael.costa@example.com", Phone = "71345678901", DDDId = 5 },
+                new Contact { Id = 8, Name = "Fernanda Gomes", Email = "fernanda.gomes@example.com", Phone = "71345678901", DDDId = 5 },
+                new Contact { Id = 9, Name = "Carlos Martins", Email = "carlos.martins@example.com", Phone = "71345678901", DDDId = 5 },
+                new Contact { Id = 10, Name = "Laura Lima", Email = "laura.lima@example.com", Phone = "71345678901", DDDId = 5 },
+                new Contact { Id = 11, Name = "Lucas Santos", Email = "lucas.santos@example.com", Phone = "84345678901", DDDId = 20 },
+                new Contact { Id = 12, Name = "Mateus Oliveira", Email = "mateus.oliveira@example.com", Phone = "84345678901", DDDId = 20 },
+                new Contact { Id = 13, Name = "Gabriel Silva", Email = "gabriel.silva@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 14, Name = "Ana Almeida", Email = "ana.almeida@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 15, Name = "Julia Costa", Email = "julia.costa@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 16, Name = "Mariana Rodrigues", Email = "mariana.rodrigues@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 17, Name = "Rafael Gomes", Email = "rafael.gomes@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 18, Name = "Fernanda Martins", Email = "fernanda.martins@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 19, Name = "Carlos Lima", Email = "carlos.lima@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 20, Name = "Laura Silva", Email = "laura.silva@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 21, Name = "Lucas Costa", Email = "lucas.costa@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 22, Name = "Mateus Martins", Email = "mateus.martins@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 23, Name = "Gabriel Lima", Email = "gabriel.lima@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 24, Name = "Ana Gomes", Email = "ana.gomes@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 25, Name = "Julia Almeida", Email = "julia.almeida@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 26, Name = "Mariana Silva", Email = "mariana.silva@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 27, Name = "Rafael Santos", Email = "rafael.santos@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 28, Name = "Fernanda Oliveira", Email = "fernanda.oliveira@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 29, Name = "Carlos Silva", Email = "carlos.silva@example.com", Phone = "15345678901", DDDId = 62 },
+                new Contact { Id = 30, Name = "Laura Santos", Email = "laura.santos@example.com", Phone = "15345678901", DDDId = 62 }
+            );
         }
     }
 }

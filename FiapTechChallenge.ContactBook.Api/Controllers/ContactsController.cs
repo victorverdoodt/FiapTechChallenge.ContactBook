@@ -18,7 +18,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetContacts([FromQuery] FindContactsByRegionDTO dto)
         {
-            var entities = await _contactService.FindAsync<ResponseContactDto>(new FindContactsByRegion(dto, dto.RegionId));
+            var entities = await _contactService.FindAsync<ResponseContactDto>(new FindContactsByRegion(dto, dto.RegionId, dto.DDDId));
 
             if (entities.Data is null)
                 return NoContent();

@@ -2,6 +2,78 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+    <MudContainer>
+  
+        <MudText Typo="Typo.h5">Visão Geral</MudText>
+            <MudText>
+                Este documento fornece um guia abrangente para a aplicação de gerenciamento de contatos desenvolvida usando .NET 8. A aplicação é projetada para gerenciar e organizar contatos pessoais com funcionalidades para registrar, visualizar, atualizar e excluir contatos.
+        </MudText>
 
-Welcome to your new app.
+    <MudDivider />
+        <MudText Typo="Typo.h5">Funcionalidades</MudText>
+
+        <MudExpansionPanels>
+            <MudExpansionPanel Text="Registro de Contatos">
+                <MudText>
+                        Permite que os usuários registrem novos contatos.
+                    </MudText>
+                    <MudList>
+                        <MudListItem>
+                            <MudItem>Nome</MudItem>
+                        </MudListItem>
+                        <MudListItem>
+                        <MudItem>Telefone</MudItem>
+                        </MudListItem>
+                        <MudListItem>
+                        <MudItem>Email</MudItem>
+                        </MudListItem>
+                        <MudListItem>
+                        <MudItem>Código de Área Regional (DDD)</MudItem>
+                        </MudListItem>
+                    </MudList>
+                </MudExpansionPanel>
+            </MudExpansionPanels>
+
+    <MudDivider />
+
+        <MudText Typo="Typo.h5">Persistência de Dados</MudText>
+            <MudText>
+                <MudList>
+                    <MudListItem>Entity Framework Core: Usado para capacidades ORM.</MudListItem>
+                    <MudListItem>PostgreSQL: Serve como o banco de dados principal para armazenar informações de contato.</MudListItem>
+                    <MudListItem>Redis: Utilizado para cache de dados acessados com frequência.</MudListItem>
+                </MudList>
+        </MudText>
+
+    <MudDivider />
+
+        <MudText Typo="Typo.h5">Validações</MudText>
+            <MudText>
+                <MudList>
+                    <MudListItem>Formato de Email: Garante que o endereço de email fornecido siga um formato válido.</MudListItem>
+                    <MudListItem>Número de Telefone: Valida o formato do número de telefone.</MudListItem>
+                    <MudListItem>Campos Obrigatórios: Verifica se todos os campos obrigatórios estão preenchidos.</MudListItem>
+                </MudList>
+        </MudText>
+
+    <MudDivider />
+
+        <MudText Typo="Typo.h5">Testes Unitários</MudText>
+            <MudText>
+                <MudList>
+                    <MudListItem>NUnit: Usado para conduzir testes unitários para garantir a confiabilidade e correção do código.</MudListItem>
+                </MudList>
+        </MudText>
+
+    <MudDivider />
+
+        <MudText Typo="Typo.h5">Containerização e Orquestração</MudText>
+            <MudText>
+            <MudText>.NET Aspire</MudText>
+                <MudList>
+                    <MudListItem>Uso: A aplicação é containerizada usando Docker, o que simplifica a implantação e a escalabilidade com .NET Aspire.</MudListItem>
+                </MudList>
+            </MudText>
+
+            <!-- Adicione outras seções de containerização e orquestração aqui -->
+    </MudContainer>
