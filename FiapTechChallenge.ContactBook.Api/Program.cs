@@ -14,6 +14,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
 
             builder.AddServiceDefaults();
             builder.AddDatabaseSetup();
+            builder.AddRedisSetup();
             builder.Services.AddAutoMapperSetup();
             builder.Services.AddSwaggerSetup();
             builder.Services.AddDefaultSetup();
