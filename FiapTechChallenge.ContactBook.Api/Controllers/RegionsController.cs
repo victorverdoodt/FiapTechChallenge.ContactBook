@@ -35,7 +35,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
 
             entities = await _regionService.FindAsync<ResponseRegionDto>();
             if (entities.Data == null || !entities.Data.Any())
-                return NotFound();
+                return NoContent();
 
             var serializedData = JsonSerializer.Serialize(entities);
             var chacheTime = _configuration.GetValue<int>("CacheTime");
