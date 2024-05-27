@@ -1,11 +1,9 @@
 ﻿using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
 using FiapTechChallenge.ContactBook.Application.Interfaces;
-using FiapTechChallenge.ContactBook.Application.Services;
 using FiapTechChallenge.ContactBook.Domain.Core.Interfaces.Default;
 using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 
 namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
@@ -35,7 +33,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Controllers
                 return Ok(JsonSerializer.Deserialize<Response<List<ResponseRegionDto>>>(cacheData));
             }
 
-            entities = await  _regionService.FindAsync<ResponseRegionDto>();
+            entities = await _regionService.FindAsync<ResponseRegionDto>();
             if (entities.Data == null || !entities.Data.Any())
                 return NotFound();
 

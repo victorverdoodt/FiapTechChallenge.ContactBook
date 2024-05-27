@@ -1,6 +1,6 @@
-﻿using FiapTechChallenge.ContactBook.Domain.Core.Validators;
+﻿using FiapTechChallenge.ContactBook.Domain.Core.Entities;
+using FiapTechChallenge.ContactBook.Domain.Core.Validators;
 using FluentValidation.TestHelper;
-using FiapTechChallenge.ContactBook.Domain.Core.Entities;
 
 namespace FiapTechChallenge.ContactBook.Tests.Domain.Core.Validators
 {

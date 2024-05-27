@@ -1,11 +1,11 @@
 ﻿using FiapTechChallenge.ContactBook.Application.DTOs.Entities;
 using FiapTechChallenge.ContactBook.Application.Interfaces;
 using FiapTechChallenge.ContactBook.Application.Specification;
+using FiapTechChallenge.ContactBook.Domain.Core.Entities;
+using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
 using FiapTechChallenge.ContactBook.Presentation.Api.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using FiapTechChallenge.ContactBook.Domain.Core.Models.Default;
-using FiapTechChallenge.ContactBook.Domain.Core.Entities;
 
 namespace FiapTechChallenge.ContactBook.Tests.Presentation.Controllers
 {
