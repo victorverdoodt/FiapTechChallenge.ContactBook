@@ -4,8 +4,8 @@
 ## Visão Geral
 Este documento fornece um guia abrangente para a aplicação de gerenciamento de contatos desenvolvida usando .NET 8. A aplicação é projetada para gerenciar e organizar contatos pessoais com funcionalidades para registrar, visualizar, atualizar e excluir contatos.
 
-![diagram-export-17-05-2024-10_24_14](https://github.com/victorverdoodt/FiapTechChallenge.ContactBook/assets/3966396/33cba834-36ac-43c7-8017-53b419d2eb23)
-
+![diagram-export-27-05-2024-15_51_50](https://github.com/victorverdoodt/FiapTechChallenge.ContactBook/assets/3966396/c50c3304-a81d-470c-9edb-774bd8a875e5)
+![diagram-export-17-05-2024-10_24_14](https://github.com/victorverdoodt/FiapTechChallenge.ContactBook/assets/3966396/63586e72-c93f-4637-86d3-9e0ebe73b0e2)
 
 ## Funcionalidades
 ### Registro de Contatos
