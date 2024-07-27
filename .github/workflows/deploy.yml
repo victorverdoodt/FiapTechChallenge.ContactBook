@@ -21,7 +21,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install dependencies 📂
-        run: dotnet restore FiapTechChallenge.ContactBook.Api/FiapTechChallenge.ContactBook.Presentation.Api
+        run: dotnet restore FiapTechChallenge.ContactBook.Api
 
       - name: Build 🧱
         run: dotnet build FiapTechChallenge.ContactBook.Api/FiapTechChallenge.ContactBook.Presentation.Api --configuration Release --no-restore
