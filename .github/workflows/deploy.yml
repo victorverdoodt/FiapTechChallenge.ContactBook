@@ -24,7 +24,7 @@ jobs:
         run: dotnet restore FiapTechChallenge.ContactBook.Api
 
       - name: Build 🧱
-        run: dotnet build FiapTechChallenge.ContactBook.Api/FiapTechChallenge.ContactBook.Presentation.Api --configuration Release --no-restore
+        run: dotnet build FiapTechChallenge.ContactBook.Api --configuration Release --no-restore
 
       - name: Test 🧪
-        run: dotnet test FiapTechChallenge.ContactBook.Api/FiapTechChallenge.ContactBook.Presentation.Api --configuration Release --no-build
+        run: dotnet test FiapTechChallenge.ContactBook.Api --configuration Release --no-build
