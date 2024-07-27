@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Tests", "05 - Tests", "{C4F22764-3AA3-41BE-8532-B4EC5E2B7E75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapTechChallenge.ContactBook.Tests", "FiapTechChallenge.ContactBook.Tests\FiapTechChallenge.ContactBook.Tests.csproj", "{05CD608E-0D51-4692-B524-76EAB39EEC36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapTechChallenge.ContactBook.Tests", "FiapTechChallenge.ContactBook.Tests\FiapTechChallenge.ContactBook.Tests.csproj", "{05CD608E-0D51-4692-B524-76EAB39EEC36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
