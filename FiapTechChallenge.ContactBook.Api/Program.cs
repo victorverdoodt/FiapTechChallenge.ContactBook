@@ -19,7 +19,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
 #endif
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
-                .WriteTo.GrafanaLoki("https://loki.rapitify.com",
+                .WriteTo.GrafanaLoki("[https://loki.url.com]",
                         [new LokiLabel { Key = "service_name", Value = Assembly.GetEntryAssembly().GetName().Name }])
                 .CreateLogger();
 
@@ -29,26 +29,25 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
             {
                 var builder = WebApplication.CreateBuilder(args);
 
-            IConfiguration configuration = builder.Configuration;
-
+                IConfiguration configuration = builder.Configuration;
             
-            builder.AddServiceDefaults();
-            builder.AddDatabaseSetup();
-            builder.AddRedisSetup();
-            builder.Services.AddTelemetry();
-            builder.Services.AddAutoMapperSetup();
-            builder.Services.AddSwaggerSetup();
-            builder.Services.AddDefaultSetup();
-            builder.Services.AddHealthSetup(configuration);
-            RegisterServices(builder.Services, configuration);
+                builder.AddServiceDefaults();
+                builder.AddDatabaseSetup();
+                builder.AddRedisSetup();
+                builder.Services.AddTelemetry();
+                builder.Services.AddAutoMapperSetup();
+                builder.Services.AddSwaggerSetup();
+                builder.Services.AddDefaultSetup();
+                builder.Services.AddHealthSetup(configuration);
+                RegisterServices(builder.Services, configuration);
 
-            var app = builder.Build();
+                var app = builder.Build();
 
-            app.UseTelemetrySetup();
-            app.UseSwaggerSetup();
-            app.UseDefaultSetup();
+                app.UseTelemetrySetup();
+                app.UseSwaggerSetup();
+                app.UseDefaultSetup();
 
-            app.Run();
+                app.Run();
             }
             catch (Exception ex)
             {
