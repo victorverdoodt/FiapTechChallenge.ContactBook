@@ -1,11 +1,13 @@
 ﻿@page "/contacts"
 @rendermode InteractiveServer
+@using FiapTechChallenge.ContactBook.Application.DTOs.Contracts
 @using FiapTechChallenge.ContactBook.Application.DTOs.Entities
 @using FiapTechChallenge.ContactBook.Domain.Core.Models.Default
 @using FiapTechChallenge.ContactBook.Presentation.WebApp.Components.Dialog
 @using FiapTechChallenge.ContactBook.Presentation.WebApp.Services
 
 @inject ContactsHttpClient ContactsClient
+@inject MessageHttpClient MessagesClient
 @inject IDialogService DialogService
 @inject ISnackbar Snackbar
 
@@ -58,6 +60,7 @@
             <MudTd DataLabel="Actions">
                 <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="@((e)=> EditContactAsync(context))" />
                 <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Secondary" OnClick="@((e)=> DeleteContactAsync(context))" />
+                <MudIconButton Icon="@Icons.Material.Filled.Send" Color="Color.Info" OnClick="@((e)=> SendMessageAsync(context))" />
             </MudTd>
         </RowTemplate>
     </MudTable>
@@ -171,4 +174,19 @@
             await LoadContactsAsync();
         }
     }
+
+    private async Task SendMessageAsync(ResponseContactDto contact)
+    {
+        var parameters = new DialogParameters<SendMessage> { { x => x.Contact, contact } };
+        var dialog = await DialogService.ShowAsync<SendMessage>("Send Message", parameters);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            // Lógica para enviar mensagem ao contato
+            await MessagesClient.PostMessageAsync((MessageContractDto)result.Data);
+            Snackbar.Add($"Message sent to {contact.Name}!", Severity.Success);
+        }
+    }
+
 }

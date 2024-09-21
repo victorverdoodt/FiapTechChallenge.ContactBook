@@ -1,0 +1,48 @@
+﻿@using FiapTechChallenge.ContactBook.Application.DTOs.Contracts
+@using FiapTechChallenge.ContactBook.Application.DTOs.Entities
+@using FiapTechChallenge.ContactBook.Presentation.WebApp.Services
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.Send" Class="mr-3 mb-n1" />
+            Send Message to @Contact.Name
+        </MudText>
+    </TitleContent>
+
+    <DialogContent>
+        <EditForm Model="@Message" OnValidSubmit="Send">
+            <DataAnnotationsValidator />
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField @bind-Value="@Message.Message" Label="Message" For="@(() => Message.Message)" Required="true" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton OnClick="Cancel">Cancel</MudButton>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Send</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    [Parameter] public ResponseContactDto Contact { get; set; }
+    public MessageContractDto Message { get; set; } = new MessageContractDto();
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void Send()
+    {
+        Message.Phone = Contact.Phone;
+        MudDialog.Close(DialogResult.Ok(Message));
+    }
+}
+
+

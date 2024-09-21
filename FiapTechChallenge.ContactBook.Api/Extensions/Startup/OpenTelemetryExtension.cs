@@ -16,13 +16,14 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Extensions.Startup
                 {
                     b.AddService(Assembly.GetEntryAssembly().GetName().Name);
                 })
-                .WithLogging(b =>
-                    b.AddOtlpExporter())
+                //.WithLogging(b =>
+                   // b.AddOtlpExporter())
                 .WithTracing(b => b
                     .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
                     .AddEntityFrameworkCoreInstrumentation()
-                    .AddOtlpExporter())
+                    //.AddOtlpExporter()
+                    )
                 .WithMetrics(b => b
                     .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
@@ -51,7 +52,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api.Extensions.Startup
                 resBuilder.AddService(serviceName);
                 options.SetResourceBuilder(resBuilder);
 
-                options.AddOtlpExporter();
+                //options.AddOtlpExporter();
             });
         }
     }

@@ -32,6 +32,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
                 IConfiguration configuration = builder.Configuration;
             
                 builder.AddServiceDefaults();
+                builder.AddRabbitMQClient("RabbitMQConnection");
                 builder.AddDatabaseSetup();
                 builder.AddRedisSetup();
                 builder.Services.AddTelemetry();
@@ -39,6 +40,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Api
                 builder.Services.AddSwaggerSetup();
                 builder.Services.AddDefaultSetup();
                 builder.Services.AddHealthSetup(configuration);
+                builder.Services.AddMassTransitSetup();
                 RegisterServices(builder.Services, configuration);
 
                 var app = builder.Build();

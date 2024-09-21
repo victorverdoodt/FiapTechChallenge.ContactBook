@@ -10,13 +10,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.0-preview.7.24251.11" />
-    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="8.0.0-preview.7.24251.11" />
-    <PackageReference Include="Aspire.Hosting.Redis" Version="8.0.0-preview.7.24251.11" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="8.2.0" />
+    <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="8.2.0" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="8.2.0" />
+    <PackageReference Include="Aspire.RabbitMQ.Client" Version="8.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FiapTechChallenge.ContactBook.Api\FiapTechChallenge.ContactBook.Presentation.Api.csproj" />
+    <ProjectReference Include="..\FiapTechChallenge.ContactBook.Presentation.Consumer\FiapTechChallenge.ContactBook.Presentation.Consumer.csproj" />
     <ProjectReference Include="..\FiapTechChallenge.ContactBook.Presentation.WebApp\FiapTechChallenge.ContactBook.Presentation.WebApp.csproj" />
   </ItemGroup>
 

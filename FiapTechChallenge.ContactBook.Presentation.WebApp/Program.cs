@@ -21,6 +21,11 @@ public class Program
             client.BaseAddress = new Uri("https://api");
         });
 
+        builder.Services.AddHttpClient<MessageHttpClient>(client =>
+        {
+            client.BaseAddress = new Uri("https://api");
+        });
+
         var app = builder.Build();
 
         app.MapDefaultEndpoints();
