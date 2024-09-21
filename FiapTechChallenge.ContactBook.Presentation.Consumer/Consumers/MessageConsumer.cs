@@ -12,7 +12,7 @@ namespace FiapTechChallenge.ContactBook.Presentation.Consumer.Consumers
         }
         public async Task Consume(ConsumeContext<MessageContract> context)
         {
-            _logger.LogWarning($"Send message to {context.Message.Phone} : {context.Message.Message}");
+            _logger.LogWarning($"Send message to {context.Message.Phone} : {context.Message.Message}.");
             await Task.CompletedTask;
         }
     }
