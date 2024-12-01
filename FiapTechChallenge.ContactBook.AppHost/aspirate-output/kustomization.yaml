@@ -1,0 +1,13 @@
+resources:
+- cache
+- database
+- RabbitMQConnection
+- api
+- webapp
+- consumer
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+

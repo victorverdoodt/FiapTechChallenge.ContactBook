@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmqconnection
+  labels:
+    app: rabbitmqconnection
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmqconnection
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: rabbitmqconnection
+    spec:
+      containers:
+      - name: rabbitmqconnection
+        image: docker.io/library/rabbitmq:4.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: tcp
+          containerPort: 5672
+        envFrom:
+        - configMapRef:
+            name: rabbitmqconnection-env
+      terminationGracePeriodSeconds: 180

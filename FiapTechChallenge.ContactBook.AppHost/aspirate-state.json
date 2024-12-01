@@ -1,0 +1,44 @@
+{
+  "projectPath": ".",
+  "inputPath": "aspirate-output",
+  "outputPath": "aspirate-output",
+  "allowClearNamespace": true,
+  "containerImageTags": [
+    "latest"
+  ],
+  "containerBuilder": "docker",
+  "kubeContext": "docker-desktop",
+  "outputFormat": "kustomize",
+  "skipFinalKustomizeGeneration": false,
+  "privateRegistryEmail": "aspir8@aka.ms",
+  "includeDashboard": true,
+  "useCustomNamespace": false,
+  "secrets": {
+    "salt": "K6QdxPoBA7HY02BK",
+    "hash": "hO3aSUj2kf6spmLeOZU5rII86cTHDXP0OLweFrdKfUk=",
+    "secrets": {
+      "database-password": {
+        "value": "K6QdxPoBA7HY02BKCL0ypyJKdjUKLv2Dx0dQo3nSMVnP7UdlrhTZeAA4enSS8LuIjAs="
+      },
+      "RabbitMQConnection-password": {
+        "value": "K6QdxPoBA7HY02BKJJ/y3kN5rshMuLk52mtVd1nTEHSs7kgyuSWFXC4zInKv\u002B\u002B\u002B1rlg="
+      },
+      "cache": {},
+      "database": {
+        "POSTGRES_PASSWORD": "K6QdxPoBA7HY02BKCL0ypyJKdjUKLv2Dx0dQo3nSMVnP7UdlrhTZeAA4enSS8LuIjAs="
+      },
+      "RabbitMQConnection": {},
+      "api": {
+        "ConnectionStrings__RabbitMQConnection": "K6QdxPoBA7HY02BKESYY4gKUmBNncVEElmUCJ0/wF0DD8R5kmAbPXFM9BU\u002Bj5Om59mvJaRtfHvsaqznbJFJQ4Tg1FWXAO33fP/ozC36ymGB6GSt\u002BASJn",
+        "ConnectionStrings__database": "K6QdxPoBA7HY02BKHDipaGsEh6k9wULZlSOW3mbyFUTEulB3jAHdWwxxG1aVxeT18wy9azprAuA/gh6IbEtY0h4zBWLadGDvD\u002BYqCmm10V5aIHh9BGMzWYeueX8iyzfCCQRQRNc=",
+        "ConnectionStrings__cache": "K6QdxPoBA7HY02BKBQGSeFUYGEMabD/UjpMgu038BVic5Acw2lo="
+      },
+      "webapp": {
+        "ConnectionStrings__RabbitMQConnection": "K6QdxPoBA7HY02BKESYY4gKUmBNncVEElmUCJ0/wF0DD8R5kmAbPXFM9BU\u002Bj5Om59mvJaRtfHvsaqznbJFJQ4Tg1FWXAO33fP/ozC36ymGB6GSt\u002BASJn"
+      },
+      "consumer": {}
+    }
+  },
+  "processAllComponents": true,
+  "isRunning": true
+}
